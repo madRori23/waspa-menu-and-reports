@@ -104,37 +104,43 @@ export function Header() {
         <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-1 pb-3 text-sm font-semibold">
           {nav.map((n) => (
             <div key={n.to} className="flex items-center">
-              <Link
-                to={n.to}
-                activeOptions={{ exact: n.to === "/" }}
-                className="flex items-center gap-1 rounded-md px-3 py-2 text-foreground hover:bg-muted"
-                activeProps={{ className: "bg-primary text-primary-foreground hover:bg-primary" }}
-              >
-                {n.label}
-              </Link>
-              {"items" in n && (
-                <DropdownMenu>
+              {"items" in n ? (
+                <DropdownMenu modal={false}>
                   <DropdownMenuTrigger asChild>
                     <Button
                       type="button"
                       variant="ghost"
-                      size="icon"
                       aria-label={`Open ${n.label} menu`}
-                      className="h-9 w-7 px-1"
+                      className="h-11 gap-1 px-3 font-semibold text-foreground hover:bg-muted hover:text-foreground data-[state=open]:bg-muted"
                     >
+                      {n.label}
                       <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start" className="min-w-56">
+                  <DropdownMenuContent align="start" className="min-w-56 max-w-[calc(100vw-2rem)]">
+                    <DropdownMenuItem asChild>
+                      <Link to={n.to} className="min-h-11 w-full cursor-pointer whitespace-normal font-semibold">
+                        {n.label} Overview
+                      </Link>
+                    </DropdownMenuItem>
                     {n.items.map((item) => (
                       <DropdownMenuItem key={item.to} asChild>
-                        <Link to={item.to} className="w-full cursor-pointer">
+                        <Link to={item.to} className="min-h-11 w-full cursor-pointer whitespace-normal">
                           {item.label}
                         </Link>
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
                 </DropdownMenu>
+              ) : (
+                <Link
+                  to={n.to}
+                  activeOptions={{ exact: n.to === "/" }}
+                  className="flex min-h-11 items-center gap-1 rounded-md px-3 py-2 text-foreground hover:bg-muted"
+                  activeProps={{ className: "bg-primary text-primary-foreground hover:bg-primary" }}
+                >
+                  {n.label}
+                </Link>
               )}
             </div>
           ))}

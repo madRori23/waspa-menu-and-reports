@@ -32,3 +32,4 @@ use the editor.
 - Keep the two consumer reporting forms’ contact fields, consent declarations and preview outcome in shared ReportFields controls to prevent validation and privacy behaviour drifting between them.
 - Keep reporting-form member options in a separate public snapshot because the source forms’ selection list differs from the member directory.
 - Keep the board directory on a dedicated About page so member portraits and contact links stay distinct from general About information.
+- Use full section-name dropdown triggers with an overview link inside each menu so mouse, touch, and keyboard users share one navigation behavior.

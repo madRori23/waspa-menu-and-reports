@@ -14,5 +14,9 @@
 - [ ] Verify the affected pages and tests.
 
 # Navigation dropdowns
-- [ ] Make section menu dropdowns open and navigate reliably by mouse, touch, and keyboard.
-- [ ] Verify desktop and mobile menu interactions.
+- [x] Make section menu dropdowns open and navigate reliably by mouse, touch, and keyboard.
+- [x] Verify desktop and mobile menu interactions.
+
+# Member directory logos
+- [x] Add a left-hand logo placeholder to every member listing.
+- [x] Verify directory layout and search on desktop and mobile.
