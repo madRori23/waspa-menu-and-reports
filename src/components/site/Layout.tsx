@@ -1,4 +1,4 @@
-import { type LinkProps, Link } from "@tanstack/react-router";
+import { type LinkProps, Link, useNavigate } from "@tanstack/react-router";
 import { type LucideIcon, ChevronDown, ChevronRight, Linkedin, Search } from "lucide-react";
 import type { ReactNode } from "react";
 import logoAsset from "@/assets/waspa-logo.png";
@@ -87,6 +87,7 @@ export function Logo() {
 }
 
 export function Header() {
+  const navigate = useNavigate();
   return (
     <header className="border-b bg-card">
       <div className="mx-auto max-w-7xl px-4">
@@ -111,6 +112,7 @@ export function Header() {
                       type="button"
                       variant="ghost"
                       aria-label={`Open ${n.label} menu`}
+                      onDoubleClick={() => navigate({ to: n.to })}
                       className="h-11 gap-1 px-3 font-semibold text-foreground hover:bg-muted hover:text-foreground data-[state=open]:bg-muted"
                     >
                       {n.label}
