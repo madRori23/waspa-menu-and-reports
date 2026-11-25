@@ -4,10 +4,10 @@ import { PageHero, RowCard, Shell, meta } from "@/components/site/Layout";
 import phone from "@/assets/phone.jpg";
 
 export const Route = createFileRoute("/for-business/")({
-  head: () => meta("For Business", "Resources and membership for organisations in the mobile services ecosystem."),
+  head: () => meta("For Business", "Apply for WASPA membership, explore membership categories, join the Associate Programme and see membership fees."),
   component: () => (
     <Shell>
-      <PageHero crumb="For Business" title="For Business" sub="Resources and membership for organisations in the mobile services ecosystem." img={phone} />
+      <PageHero crumb="For Business" title="For Business" sub="Apply for WASPA membership, explore membership categories, join the Associate Programme and see membership fees." img={phone} />
       <div className="mx-auto grid max-w-5xl gap-4 px-4 py-10 md:grid-cols-2">
         <RowCard to="/for-business/membership-application" icon={SquarePen} title="Apply for Membership" desc="Complete the online application to become a registered WASPA member." />
         <RowCard to="/for-business/about-membership" icon={Users} title="About Membership" desc="Explore membership categories, benefits and whether your organisation qualifies." />

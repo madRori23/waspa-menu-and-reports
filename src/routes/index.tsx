@@ -26,7 +26,7 @@ function Index() {
           <div className="mt-12 grid gap-4 md:ml-auto md:max-w-3xl md:grid-cols-2">
             {[
               { i: Users, t: "For Consumers", d: "Get support, lodge a complaint, report scams and learn about mobile services.", to: "/consumer-support" as const },
-              { i: Briefcase, t: "For Businesses", d: "Membership, the WASPA Code of Conduct and industry resources.", to: "/for-business" as const },
+              { i: Briefcase, t: "For Businesses", d: "Apply for WASPA membership, explore membership categories, join the Associate Programme and see membership fees.", to: "/for-business" as const },
             ].map(({ i: I, t, d, to }) => (
               <Link key={t} to={to} className="card-lift flex gap-4 rounded-lg bg-card p-5 text-card-foreground">
                 <I className="h-12 w-12 shrink-0 text-secondary" strokeWidth={1.5} />
